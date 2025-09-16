@@ -15,8 +15,16 @@ import { ref } from 'vue'
 const props=defineProps({
   id: {
     type: String,
+    required: true,
   },
-  // дописать оставшиеся пропсы: isCompleted, title
+  title: {
+    type: String,
+    required: true,
+  },
+  isCompleted: {
+    type: Boolean,
+    required: true,
+  },
 })
 const emit=defineEmits([
   'toggle',

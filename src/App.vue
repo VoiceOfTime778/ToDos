@@ -11,6 +11,7 @@
       :id="item.id"
       :title="item.title"
       :is-completed="item.isCompleted"
+      @toggle="onToggle"
     />
   </div>
 </template>
@@ -24,6 +25,17 @@ const todoItems=ref(todos)
 const activeCount=computed(() => {
   return todoItems.value.filter(item => !item.isCompleted).length
 })
+
+const onToggle=(id) => {
+  const index=todoItems.value.findIndex(item => item.id===id)
+  if(index!==-1){
+    const current=todoItems.value[index]
+    todoItems.value[index]={
+      ...current,
+      isCompleted: !current.isCompleted,
+    }
+  }
+}
 </script>
 
 <style scoped>

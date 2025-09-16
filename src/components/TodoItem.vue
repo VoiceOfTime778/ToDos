@@ -31,7 +31,7 @@ const emit=defineEmits([
 ])
 
 const handleChange=() => {
-  // дописать функцию, которая будет сообщать об изменении пропса isCompleted
+  emit('toggle', props.id)
 }
 </script>
 

@@ -16,7 +16,7 @@ import TodoItem from '@/components/TodoItem.vue' // импортируем эл�
 
 const todoItems=ref(todos)
 const activeCount=computed(() => {
-  // дописать функцию, которая будет выводить актуальное количество незавершенных дел
+  return todoItems.value.filter(item => !item.isCompleted).length
 })
 </script>
 

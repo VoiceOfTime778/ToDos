@@ -5,7 +5,13 @@
         1) пробросить значения в props
         2) отслеживать изменения параметра isComplited
     -->
-    <TodoItem />
+    <TodoItem
+      v-for="item in todoItems"
+      :key="item.id"
+      :id="item.id"
+      :title="item.title"
+      :is-completed="item.isCompleted"
+    />
   </div>
 </template>
 
